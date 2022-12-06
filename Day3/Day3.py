@@ -72,3 +72,10 @@ print(sum)
 #part 2, can't use part 1 code effectively, easier to find new algorithm, two pointer method can be extended to 3 pointer, and is probably good algorithmic complexity
 # but three pointer method is hard
 
+# first remove duplicates in each group of 3? then find intersection?
+#what is star arg *arg, *set??
+
+#create subgroup of three
+grouped = []
+
+#need to group into subgroups of 3

@@ -1,6 +1,6 @@
 #Day 1 of Advent of Code
 
-day1input = open('Day1.txt', 'r')
+day1input = open('Day1\Day1.txt', 'r') #annoying, could fail to find file depending on where code is run
 day1arr = day1input.readlines()
 #print(day1arr)
 
@@ -28,6 +28,7 @@ lst.append(int(temp))
 #fast is either to sort and then return first second third index or remove max element and call max() three times
 
 lst.sort(reverse=True)
+print(lst[0])
 print(sum(lst[:3]))
 
 #print(lst[0]+lst[1]+lst[2])

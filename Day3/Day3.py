@@ -8,7 +8,7 @@ text.close()
 sackscut = sacks[0:5]
 print(sackscut)
 
-sum = 0
+""" sum = 0
 for singlesack in sacks:
     midpt = len(singlesack)//2
     splitone = sorted(singlesack[:midpt]) #close index not inclusive? split
@@ -67,3 +67,8 @@ for singlesack in sacks:
     print(prior)
     sum = sum + prior
 print(sum)
+ """
+
+#part 2, can't use part 1 code effectively, easier to find new algorithm, two pointer method can be extended to 3 pointer, and is probably good algorithmic complexity
+# but three pointer method is hard
+

@@ -56,7 +56,7 @@ for e in plays: #plays -> playscut for testing, could make calc a seperate funct
 # x = lose, y = draw, z = win
 # 0 , 3, 6 so index * 3
 points = 0
-for e in playscut:
+for e in plays:
     movecond = e.split()
     # add points from win draw lose
     points = points + 3*you.index(movecond[1]) # using you as lose, draw, win instead of move 
@@ -67,5 +67,13 @@ for e in playscut:
     # on draw, same move
     elif (you.index(movecond[1]) == 1):
         points = points + opp.index(movecond[0]) + 1 # adding value of move, index + 1 since moves in order
+        continue
     elif (you.index(movecond[1]) == 2):
-        
+        #can use modulo 2? shift based on moves index of opponent + 1?
+        # r->p, p->s, s->r, 01, 12, 2(3)0
+        yourmove = ((opp.index(movecond[0])) % 2) + 1 # add 1 mod 2
+        points = points + yourmove + 1 # don't need to find by index again
+        continue
+    else: #primitive exception find
+        print("error")
+print(points)

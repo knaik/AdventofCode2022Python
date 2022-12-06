@@ -21,15 +21,32 @@ you = ["X", "Y", "Z"]
 
 playscut = plays[0:5]
 #print(playscut) ## ['C Z', 'A Y', 'C Z', 'A Y', 'C Y']
-
+                    #d      w       d       w       l
 #commited to checking win based on math and index search, assuming math is quick for single digits and index search in array is quick, maybe enumeration would have been better?
 
 points = 0
-for e in playscut:
+for e in plays: #plays -> playscut for testing, could make calc a seperate function
     moves = e.split()
+    #move both win/loss calculation and points per move outside
+    movecalc = opp.index(moves[0]) - you.index(moves[1])  #shifting move calculation outside loop
+    points = points + you.index(moves[1]) + 1 # add 1 to the index value of array of moves for points based on shape
+    ## print(moves[1]) #adding prints to easy calc
+    #continues are prob redundant
     #draw condition
-    if(opp.index(moves[0]) == you.index(moves[1])):
-        #find points based on shape
-        points = points + you.index(moves[1]) + 1 # add 1 to the index value of array of moves
-        points = points + 3 # add for draw
+    if(movecalc == 0):
+        points = points + 3 # add for draw print("d")
+        continue
     #lose condition
+    elif(movecalc == 1 or movecalc == -2):
+        points = points + 0 # not necessary but to make clear nothing should be added on lose print("l")
+        continue
+    #win condition
+    elif(movecalc == -1 or movecalc == 2): 
+        points = points + 6 # print("w")
+        continue
+    else: #throwing simple exception instead of try..
+        print("error in calculation, check")
+    
+#could make calc a function
+
+print(points)

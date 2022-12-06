@@ -1,6 +1,9 @@
 #Day 2 AoC
 
-plays = open("Day2\Day2.txt", "r").read().splitlines()
+text = open("Day2\Day2.txt", "r")
+plays = text.read().splitlines()
+text.close()
+
 #print(plays)
 #print(plays[-2]) all there, just not printed in terminal in vs code
 

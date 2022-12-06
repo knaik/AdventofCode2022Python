@@ -1,7 +1,7 @@
 #Day 1 of Advent of Code
-
-day1input = open('Day1\Day1.txt', 'r') #annoying, could fail to find file depending on where code is run
-day1arr = day1input.readlines()
+text = open('Day1\Day1.txt', 'r') #annoying, could fail to find file depending on where code is run
+day1arr = text.readlines()
+text.close()
 #print(day1arr)
 
 index = 0

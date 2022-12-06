@@ -24,7 +24,7 @@ playscut = plays[0:5]
                     #d      w       d       w       l
 #commited to checking win based on math and index search, assuming math is quick for single digits and index search in array is quick, maybe enumeration would have been better?
 
-points = 0
+""" points = 0
 for e in plays: #plays -> playscut for testing, could make calc a seperate function
     moves = e.split()
     #move both win/loss calculation and points per move outside
@@ -46,7 +46,26 @@ for e in plays: #plays -> playscut for testing, could make calc a seperate funct
         continue
     else: #throwing simple exception instead of try..
         print("error in calculation, check")
-    
+     """
 #could make calc a function
 
-print(points)
+# print(points)
+
+#Part 2 can use difference to find index value.
+
+# x = lose, y = draw, z = win
+# 0 , 3, 6 so index * 3
+points = 0
+for e in playscut:
+    movecond = e.split()
+    # add points from win draw lose
+    points = points + 3*you.index(movecond[1]) # using you as lose, draw, win instead of move 
+    # add points from their move shifted, based on draw lose win
+    # on lose do nothing
+    if (you.index(movecond[1]) == 0):
+        continue
+    # on draw, same move
+    elif (you.index(movecond[1]) == 1):
+        points = points + opp.index(movecond[0]) + 1 # adding value of move, index + 1 since moves in order
+    elif (you.index(movecond[1]) == 2):
+        

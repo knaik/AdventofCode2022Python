@@ -78,7 +78,8 @@ print(move2) """
 
 ##part 2, can I use a temporary stack?
 
-temp = []
+##not working
+""" temp = []
 for move in move2:
     #print(int(move[0]))
     #print(arr2[int(move[1]) - 1])
@@ -95,3 +96,25 @@ for move in move2:
     #print(arr2[int(move[1]) - 1])
     #print(arr2[int(move[2]) - 1])
 #print(arr2)
+ """
+
+ ##array splice should work  #1,3,5
+for move in move2:
+    print(arr2)
+    print(move)
+    slicelen = int(move[0])
+    indxfrom = int(move[1])-1
+    indxto = int(move[2])-1
+    #print(indxfrom,indxto)
+    #print(slicelen)
+    #print(int(move[1]))
+    #print(arr2[int(move[1])-1])
+    #print(arr2[int(move[2])-1])
+    cuts = arr2[indxfrom][:-1*slicelen]
+    print(cuts)
+    del arr2[indxfrom][-1*slicelen]
+    print(type(list(cuts)))
+    arr2[indxto] = arr2[indxto] + list(cuts)
+    print(arr2[indxto])
+    print(arr2[indxfrom])
+    #print(arr2)

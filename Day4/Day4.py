@@ -53,9 +53,34 @@ for e in ids:
 count2 = 0
 for e in ids:
     bothe = e.split(",")
-    #print(bothe)
+    print(bothe)
     first = bothe[0].split("-")
     #print(first)
     second = bothe[1].split("-")
     #print(second)
+    firstendptbeg = first[0]
+    firstendptend = first[1]
 
+    """ if(firstendptbeg >= second[0] and firstendptbeg <= second[1]):
+        count2 += 1
+    elif(firstendptend >= second[0] and firstendptend <= second[1]):
+        count2 += 1
+    else:
+        continue """
+
+    """  print(int(first[0]) - int(second[0]))
+    print(int(first[0]) - int(second[1]))
+    print(int(first[1]) - int(second[0]))
+    print(int(first[1]) - int(second[1])) """
+
+    if ((int(first[0]) - int(second[0]) >= 0) and (int(first[0]) - int(second[1])) <= 0 ):
+        count2 += 1
+        #print(bothe)
+    elif ((int(first[1]) - int(second[0])) >= 0 and (int(first[1]) - int(second[1])) <= 0 ):
+        count2 += 1
+        #print(bothe)
+    elif ((int(second[0]) - int(first[0])) >= 0 and (int(second[0]) - int(first[1])) <= 0 ):
+        count2 += 1
+    elif ((int(second[1]) - int(first[0])) >= 0 and (int(second[1]) - int(first[1])) <= 0 ):
+        count2 += 1
+print(count2)

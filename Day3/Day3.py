@@ -5,8 +5,8 @@ sacks = text.read().splitlines()
 text.close()
 
 
-sackscut = sacks[0:5]
-print(sackscut)
+sackscut = sacks[0:6]
+#print(sackscut)
 
 """ sum = 0
 for singlesack in sacks:
@@ -75,7 +75,33 @@ print(sum)
 # first remove duplicates in each group of 3? then find intersection?
 #what is star arg *arg, *set??
 
-#create subgroup of three
-grouped = []
+def removeDup(str):
+    return "".join(set(str))
 
-#need to group into subgroups of 3
+
+#print(sackscut)
+
+deduped = []
+
+for e in sacks: #changes order
+    deduped.append(sorted(removeDup(e))) # sorted creates list of list instead of just list of strings of each sack, splitting by letter
+
+#print(deduped) 
+
+n = 0
+arr = []
+for n in range(0, len(deduped) , 3):
+    arr.append( "".join(set(deduped[n]).intersection(deduped[n+1]).intersection(deduped[n+2])))
+
+print(arr)
+
+sum = 0
+for k in arr:
+    if (k.isupper()):
+        print(k)
+        sum = sum + ord(k) - 64 + 26
+    else:
+        print(sum)
+        sum = sum + ord(k) - 96
+
+print(sum)
